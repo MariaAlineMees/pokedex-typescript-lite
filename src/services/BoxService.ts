@@ -1,4 +1,4 @@
-import type {PokemonResumo } from "../models/Pokemon.js";
+import type { PokemonResumo } from "../models/Pokemon.js";
 
 export class CatalogoPokemon {
 
@@ -8,12 +8,30 @@ export class CatalogoPokemon {
 
         const jaExiste = this.pokemons.some((item) => item.id === pokemon.id);
 
-        if (jaExiste){
+        if (jaExiste) {
             console.log(`[AVISO] ${pokemon.nome} já está no catálogo.`);
             return;
         }
 
         this.pokemons.push(pokemon);
         console.log(`[OK] ${pokemon.nome} adicionado ao catálogo.`);
+    }
+
+    listar(): void {
+
+        if (this.pokemons.length === 0) {
+            console.log("[AVISO] Catálogo vazio.");
+            return;
+        }
+
+        console.log("Catálogo atual:");
+
+        this.pokemons.forEach((pokemon) => {
+
+            console.log(
+                `#${pokemon.id} ${pokemon.nome} | Tipos: ${pokemon.tipos.join(", ")} | Altura: ${pokemon.altura} | Peso: ${pokemon.peso}`
+            );
+        });
+
     }
 }
