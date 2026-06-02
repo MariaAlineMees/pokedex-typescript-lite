@@ -1,164 +1,137 @@
-# Pokédex TypeScript Lite
+<div align="center">
+  <h1>🦊 Pokédex TypeScript Lite 🔴⚪</h1>
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Status-Concluído-success?style=for-the-badge" alt="Status" />
+</div>
 
-## Sobre o projeto
-O Pokédex TypeScript Lite é uma aplicação simples em Node.js com TypeScript que consulta dados de Pokémon na PokeAPI e organiza alguns resultados em um catálogo local durante a execução do programa.
+---
+## 📖 Sobre o projeto
+O Pokédex TypeScript Lite é uma aplicação de terminal construída em Node.js com TypeScript. O sistema consulta dados em tempo real na PokeAPI, processa as informações e gerencia um catálogo local de Pokémon durante a execução do programa, oferecendo uma experiência interativa ao usuário.
 
-## Objetivo
-Praticar os principais conceitos do desenvolvimento back-end:
-- Node.js e JavaScript no back-end
-- TypeScript (tipagem, interfaces, classes)
-- Manipulação de arrays e objetos (JSON)
-- Consumo de APIs externas (fetch, async/await)
-- Tratamento de erros (try/catch)
-- Versionamento e organização (Git, GitHub, GitFlow, Kanban)
+## 🎯 Objetivo
+Praticar e consolidar os principais conceitos de back-end do Módulo 01:
+- Node.js e JavaScript no lado do servidor.
+- TypeScript (tipagem forte, interfaces e classes).
+- Manipulação de arrays e objetos (estruturas JSON).
+- Consumo de APIs externas assíncronas (fetch, async/await).
+- Tratamento de erros e exceções.
+- Versionamento e organização ágil (Git, GitHub, GitFlow, Kanban).
 
-## Tecnologias utilizadas
-- Node.js
-- TypeScript
-- TSX
-- PokeAPI
-- Git e GitHub
+## 🚀 Tecnologias utilizadas
+- **Node.js** (Ambiente de execução)
+- **TypeScript & TSX** (Linguagem e compilador de execução)
+- **PokeAPI** (Fonte de dados externa REST)
+- **Git & GitHub** (Versionamento de código)
 
-## Pré-requisitos
-Antes de executar o projeto, é necessário ter instalado:
-- Node.js
-- npm
+## ⚠️ Pré-requisitos
+Antes de executar o projeto, certifique-se de ter instalado em sua máquina:
+- Node.js (Versão LTS recomendada)
+- npm (Gerenciador de pacotes do Node)
 - Git
 
-## Como instalar
+---
 
-1. Clone o repositório:
-```bash
-git clone https://github.com/MariaAlineMees/pokedex-typescript-lite.git
-```
+## 💻 Como instalar e rodar o projeto
 
-2. Acesse a pasta do projeto:
-```bash
-cd pokedex-typescript-lite
-```
+**1. Clone o repositório:**
 
-3. Instale as dependências:
-```bash
-npm install
-```
+    git clone https://github.com/MariaAlineMees/pokedex-typescript-lite.git
 
-## Como executar
-Execute o projeto em ambiente de desenvolvimento:
-```bash
-npm run dev
-```
+**2. Acesse a pasta do projeto:**
 
-## Estrutura do projeto
-```text
-pokedex-typescript-lite/
-├── src/
-│   ├── models/
-│   │   └── Pokemon.ts
-│   ├── services/
-│   │   ├── BoxService.ts
-│   │   └── PokeApiService.ts
-│   └── main.ts
-├── package.json
-├── tsconfig.json
-└── README.md
-```
+    cd pokedex-typescript-lite
 
-## Funcionalidades
-- [x] Buscar Pokémon por nome ou ID
-- [x] Tratar erro de Pokémon inexistente
-- [x] Transformar resposta da API em objeto simplificado
-- [x] Adicionar Pokémon ao catálogo local
-- [x] Impedir Pokémon duplicado
-- [x] Listar catálogo
-- [x] Remover Pokémon por ID
-- [x] Exibir mensagens no terminal
+**3. Instale as dependências:**
 
-## Exemplos de execução
+    npm install
 
-### Busca válida
-**Entrada testada:**
-`pikachu` e `charmander`
+**4. Execute o projeto em ambiente de desenvolvimento:**
 
-**Saída obtida:**
-```text
-[OK] pikachu adicionado ao catálogo.
-[OK] charmander adicionado ao catálogo.
-```
+    npm run dev
 
-### Duplicidade
-**Entrada testada:**
-adicionar `pikachu` duas vezes
+---
 
-**Saída obtida:**
-```text
-[AVISO] pikachu já está no catálogo.
-```
+## 📂 Estrutura e Explicação dos Arquivos
+O projeto foi organizado em camadas arquiteturais para isolar responsabilidades. Abaixo está a árvore do projeto e a explicação de cada arquivo:
 
-### Busca inválida
-**Entrada testada:**
-`pokemon-inexistente`
+    pokedex-typescript-lite/
+    ├── assets/
+    │   ├── menu-interativo.png         # Captura de tela do menu
+    │   ├── print-tabela.png            # Captura de tela da tabela de listagem
+    │   └── print-json.png              # Captura de tela do banco de dados
+    ├── src/
+    │   ├── controllers/
+    │   │   └── TerminalController.ts   # Gerencia a interface e os menus do terminal
+    │   ├── models/
+    │   │   └── Pokemon.ts              # Define as Interfaces (tipagens) dos dados
+    │   ├── services/
+    │   │   ├── BoxService.ts           # Lida com a lógica de salvar, listar e remover localmente
+    │   │   └── PokeApiService.ts       # Lida exclusivamente com as requisições HTTP (fetch)
+    │   └── main.ts                     # Ponto de entrada que inicializa a aplicação
+    ├── pc_box.json                     # Banco de dados local (gerado automaticamente)
+    ├── package.json                    # Gerenciador de dependências e scripts
+    ├── tsconfig.json                   # Configurações do compilador TypeScript
+    └── README.md                       # Documentação do projeto
 
-**Saída obtida:**
-```text
-[ERRO] Pokémon não encontrado: pokemon-inexistente
-```
+## ✨ Funcionalidades
+- [x] 🔍 Buscar Pokémon por nome ou ID diretamente da PokeAPI.
+- [x] 🛡️ Tratar erros de busca (ex: Pokémon inexistente) sem quebrar o sistema.
+- [x] 📦 Transformar e simplificar o objeto complexo de resposta da API.
+- [x] ➕ Adicionar Pokémon ao catálogo local com bloqueio contra duplicatas.
+- [x] 📋 Listar o catálogo de forma organizada.
+- [x] 🗑️ Remover Pokémon do catálogo utilizando o ID.
+- [x] 💬 Exibir mensagens e feedbacks visuais claros no terminal.
+- [x] 🌟 **Extra:** Menu interativo em loop no terminal.
+- [x] 🌟 **Extra:** Salvar catálogo de forma persistente em arquivo pc_box.json.
+- [x] 🌟 **Extra:** Exibição de atributos de combate avançados (HP e Ataque Base).
 
-### Listagem
-**Saída obtida:**
-```text
-Catálogo atual:
-#25 pikachu | Tipos: electric | Altura: 4 | Peso: 60
-#4 charmander | Tipos: fire | Altura: 6 | Peso: 85
-```
+---
 
-### Remoção
-**Entrada testada:**
-remover ID `25`
+## 📸 Exemplos de execução
 
-**Saída obtida:**
-```text
-[OK] Pokémon removido do catálogo.
+### 1. Menu Interativo Principal
+Abaixo, a interface de controle do sistema aguardando a entrada do usuário:
 
---- LISTAGEM APÓS REMOÇÃO ---
-Catálogo atual:
-#4 charmander | Tipos: fire | Altura: 6 | Peso: 85
-```
+![Print do Menu Interativo](./assets/menu-interativo.png)
 
-## Conceitos aplicados
+### 2. Listagem do Catálogo (Tabela)
+Demonstração da listagem formatada e ordenada por ID, exibindo os dados persistidos:
 
-### TypeScript
-A tipagem forte foi garantida através do uso de `Interfaces` para mapear os objetos esperados. As funções possuem parâmetros tipados (ex: `nomeOuId: string`, `pokemon: PokemonResumo`) e retornos explícitos (`Promise<PokemonResumo | null>`, `void`).
+![Print da Tabela de Catálogo](./assets/print-tabela.png)
 
-### Interface PokemonResumo
-A interface `PokemonResumo` foi projetada para atuar como o molde da nossa entidade principal, isolando apenas as informações úteis que o catálogo precisa armazenar (ID, nome, tipos, altura e peso), descartando o excesso de dados vindos da API.
+### 3. Persistência de Dados (JSON)
+Arquivo pc_box.json gerado automaticamente pelo sistema, armazenando os dados formatados do catálogo localmente:
 
-### Fetch e async/await
-A integração com a PokeAPI foi implementada na classe `PokeApiService`. A função `buscarPokemon` é assíncrona (`async`), utilizando `await fetch()` para realizar a requisição HTTP nativa e aguardar a resposta sem travar a execução do Node.js.
+![Print do Banco de Dados Local](./assets/print-json.png)
 
-### Tratamento de erros
-O bloco `try/catch` protege a aplicação contra falhas de rede. Além disso, utilizamos a verificação `!resposta.ok` para interceptar retornos 404 da API (quando o usuário digita um Pokémon que não existe), garantindo que o programa apenas exiba o aviso no terminal e retorne `null` ao invés de quebrar o servidor.
+---
 
-### Métodos de array
-- `map`: Utilizado para percorrer o array de tipos retornado pela API e extrair apenas a string do nome do tipo.
-- `some`: Utilizado como verificador lógico para impedir a adição de Pokémon com IDs duplicados na lista.
-- `forEach`: Utilizado para iterar sobre o catálogo e imprimir os dados organizados de cada Pokémon.
-- `filter`: Utilizado no método de remoção para reconstruir o array do catálogo excluindo o ID especificado.
+## 🧠 Conceitos aplicados
 
-### Classe CatalogoPokemon
-A classe centraliza as regras de negócio de persistência em memória. Possui o atributo `pokemons` protegido pelo modificador de acesso `private` (garantindo o encapsulamento), que só pode ser manipulado pelos métodos internos `adicionar`, `listar` e `remover`.
+* **TypeScript e Interfaces:** A tipagem forte foi garantida através do uso de Interfaces (PokemonResumo e PokemonApiResponse) para mapear os objetos esperados da API e atuar como molde seguro da entidade principal.
+* **Fetch e async/await:** A integração foi implementada na classe PokeApiService. A função de busca utiliza fetch nativo e async/await para realizar requisições HTTP e aguardar a resposta de forma assíncrona.
+* **Tratamento de erros:** A aplicação é protegida por try/catch. Verificações interceptam retornos 404 da PokeAPI, garantindo que o programa apenas exiba avisos no terminal.
+* **Métodos de Array Integrados:** * map() para extrair tipos;
+  * some() para impedir IDs duplicados;
+  * forEach() para iterar e exibir o catálogo;
+  * filter() para reconstruir arrays nas remoções;
+  * sort() para ordenação crescente;
+  * find() para extrair status (HP/ATK).
+* **Orientação a Objetos (POO):** Uso de Classes (CatalogoPokemon) com atributos privados para encapsulamento e métodos expostos para manipulação segura dos dados.
 
-## Organização do Kanban
-Link do Kanban: https://github.com/users/MariaAlineMees/projects/1/views/1
+---
 
-## Branches utilizadas
-- `main`
-- `develop`
-- `feat/pokedex`
-- `docs/readme`
+## 📋 Organização e Versionamento
+- **Link do Kanban (Gestão de Tarefas):** [Acessar Board](https://github.com/users/MariaAlineMees/projects/1/views/1)
+- **Branches utilizadas no GitFlow:**
+  - main (Produção)
+  - develop (Desenvolvimento contínuo)
+  - feat/pokedex (Implementação de funcionalidades)
 
-## Melhorias futuras
-- Criar menu interativo no terminal
-- Salvar catálogo em arquivo JSON
-- Exibir HP, ataque e defesa
-- Criar filtros por tipo de Pokémon
-- Criar uma API própria com Express
+---
+
+## ✒️ Autoria
+
+Projeto desenvolvido por **Maria Aline Mees**, estudante de Sistemas de Informação na UFBRA.  
+*Desenvolvido durante o programa SCTec como mini-projeto avaliativo do Módulo 01.*
