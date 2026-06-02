@@ -134,4 +134,4 @@ Arquivo pc_box.json gerado automaticamente pelo sistema, armazenando os dados fo
 
 ## ✒️ Autoria
 
-Projeto desenvolvido por **Maria Aline Mees**, durante o programa SCTec como mini-projeto avaliativo do Módulo 01.*
+Projeto desenvolvido por **Maria Aline Mees**, durante o Curso SCTec (Back-end Node) como mini-projeto avaliativo do Módulo 01.
