@@ -112,7 +112,8 @@ Arquivo pc_box.json gerado automaticamente pelo sistema, armazenando os dados fo
 * **TypeScript e Interfaces:** A tipagem forte foi garantida através do uso de Interfaces (PokemonResumo e PokemonApiResponse) para mapear os objetos esperados da API e atuar como molde seguro da entidade principal.
 * **Fetch e async/await:** A integração foi implementada na classe PokeApiService. A função de busca utiliza fetch nativo e async/await para realizar requisições HTTP e aguardar a resposta de forma assíncrona.
 * **Tratamento de erros:** A aplicação é protegida por try/catch. Verificações interceptam retornos 404 da PokeAPI, garantindo que o programa apenas exiba avisos no terminal.
-* **Métodos de Array Integrados:** * map() para extrair tipos;
+* **Métodos de Array Integrados:** 
+  * map() para extrair tipos;
   * some() para impedir IDs duplicados;
   * forEach() para iterar e exibir o catálogo;
   * filter() para reconstruir arrays nas remoções;
