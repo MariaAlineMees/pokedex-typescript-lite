@@ -15,6 +15,9 @@ export class PokeApiService {
 
             const dados = await resposta.json() as PokemonApiResponse;
 
+            const hp = dados.stats.find(item => item.stat.name === "hp")?.base_stat || 0;
+            const ataque = dados.stats.find(item => item.stat.name === "attack")?.base_stat || 0;
+
             const tiposMapeados = dados.types.map((item) => item.type.name);
 
             const pokemonMapeado: PokemonResumo = {
@@ -22,16 +25,18 @@ export class PokeApiService {
                 nome: dados.name,
                 tipos: tiposMapeados,
                 altura: dados.height,
-                peso: dados.weight
+                peso: dados.weight,
+                hp: hp,            
+                ataque: ataque    
             };
 
             return pokemonMapeado;
 
         } catch (erro) {
-            
+
             console.log("[ERRO] Não foi possível buscar o Pokémon.");
             return null;
         }
-        
+
     }
 }

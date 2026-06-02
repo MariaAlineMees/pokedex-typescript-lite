@@ -1,12 +1,37 @@
 [
   {
+    "id": 1,
+    "nome": "bulbasaur",
+    "tipos": [
+      "grass",
+      "poison"
+    ],
+    "altura": 7,
+    "peso": 69,
+    "hp": 45,
+    "ataque": 49
+  },
+  {
     "id": 4,
     "nome": "charmander",
     "tipos": [
       "fire"
     ],
     "altura": 6,
-    "peso": 85
+    "peso": 85,
+    "hp": 39,
+    "ataque": 52
+  },
+  {
+    "id": 7,
+    "nome": "squirtle",
+    "tipos": [
+      "water"
+    ],
+    "altura": 5,
+    "peso": 90,
+    "hp": 44,
+    "ataque": 48
   },
   {
     "id": 25,
@@ -15,7 +40,87 @@
       "electric"
     ],
     "altura": 4,
-    "peso": 60
+    "peso": 60,
+    "hp": 35,
+    "ataque": 55
+  },
+  {
+    "id": 113,
+    "nome": "chansey",
+    "tipos": [
+      "normal"
+    ],
+    "altura": 11,
+    "peso": 346,
+    "hp": 250,
+    "ataque": 5
+  },
+  {
+    "id": 116,
+    "nome": "horsea",
+    "tipos": [
+      "water"
+    ],
+    "altura": 4,
+    "peso": 80,
+    "hp": 30,
+    "ataque": 40
+  },
+  {
+    "id": 60,
+    "nome": "poliwag",
+    "tipos": [
+      "water"
+    ],
+    "altura": 6,
+    "peso": 124,
+    "hp": 40,
+    "ataque": 50
+  },
+  {
+    "id": 63,
+    "nome": "abra",
+    "tipos": [
+      "psychic"
+    ],
+    "altura": 9,
+    "peso": 195,
+    "hp": 25,
+    "ataque": 20
+  },
+  {
+    "id": 112,
+    "nome": "rhydon",
+    "tipos": [
+      "ground",
+      "rock"
+    ],
+    "altura": 19,
+    "peso": 1200,
+    "hp": 105,
+    "ataque": 130
+  },
+  {
+    "id": 108,
+    "nome": "lickitung",
+    "tipos": [
+      "normal"
+    ],
+    "altura": 12,
+    "peso": 655,
+    "hp": 90,
+    "ataque": 55
+  },
+  {
+    "id": 106,
+    "nome": "hitmonlee",
+    "tipos": [
+      "fighting"
+    ],
+    "altura": 15,
+    "peso": 498,
+    "hp": 50,
+    "ataque": 120
   },
   {
     "id": 19,
@@ -24,72 +129,32 @@
       "normal"
     ],
     "altura": 3,
-    "peso": 35
+    "peso": 35,
+    "hp": 30,
+    "ataque": 56
   },
   {
-    "id": 59,
-    "nome": "arcanine",
+    "id": 228,
+    "nome": "houndour",
     "tipos": [
+      "dark",
       "fire"
     ],
-    "altura": 19,
-    "peso": 1550
+    "altura": 6,
+    "peso": 108,
+    "hp": 45,
+    "ataque": 60
   },
   {
-    "id": 619,
-    "nome": "mienfoo",
+    "id": 472,
+    "nome": "gliscor",
     "tipos": [
-      "fighting"
-    ],
-    "altura": 9,
-    "peso": 200
-  },
-  {
-    "id": 651,
-    "nome": "quilladin",
-    "tipos": [
-      "grass"
-    ],
-    "altura": 7,
-    "peso": 290
-  },
-  {
-    "id": 185,
-    "nome": "sudowoodo",
-    "tipos": [
-      "rock"
-    ],
-    "altura": 12,
-    "peso": 380
-  },
-  {
-    "id": 1,
-    "nome": "bulbasaur",
-    "tipos": [
-      "grass",
-      "poison"
-    ],
-    "altura": 7,
-    "peso": 69
-  },
-  {
-    "id": 6,
-    "nome": "charizard",
-    "tipos": [
-      "fire",
+      "ground",
       "flying"
     ],
-    "altura": 17,
-    "peso": 905
-  },
-  {
-    "id": 3,
-    "nome": "venusaur",
-    "tipos": [
-      "grass",
-      "poison"
-    ],
     "altura": 20,
-    "peso": 1000
+    "peso": 425,
+    "hp": 75,
+    "ataque": 95
   }
 ]

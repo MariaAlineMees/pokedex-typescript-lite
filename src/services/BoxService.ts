@@ -4,13 +4,13 @@ import { join } from "path";
 
 export class CatalogoPokemon {
   private pokemons: PokemonResumo[] = [];
-  
+
   private caminhoArquivo = join(process.cwd(), "pc_box.json");
 
   async inicializar(): Promise<void> {
     try {
       const dados = await readFile(this.caminhoArquivo, "utf-8");
-      this.pokemons = JSON.parse(dados); 
+      this.pokemons = JSON.parse(dados);
     } catch (erro) {
       this.pokemons = [];
     }
@@ -34,7 +34,7 @@ export class CatalogoPokemon {
     await this.salvarNoArquivo();
   }
 
-listar(): void {
+  listar(): void {
     if (this.pokemons.length === 0) {
       console.log("[AVISO] Catálogo vazio.");
       return;
@@ -45,7 +45,7 @@ listar(): void {
     console.log("Catálogo atual (Ordenado por ID):");
     this.pokemons.forEach((pokemon) => {
       console.log(
-        `#${pokemon.id} ${pokemon.nome} | Tipos: ${pokemon.tipos.join(", ")} | Altura: ${pokemon.altura} | Peso: ${pokemon.peso}`
+        `#${pokemon.id} ${pokemon.nome} | Tipos: ${pokemon.tipos.join(", ")} | HP: ${pokemon.hp} | ATK: ${pokemon.ataque} | Altura: ${pokemon.altura} | Peso: ${pokemon.peso}`
       );
     });
   }
