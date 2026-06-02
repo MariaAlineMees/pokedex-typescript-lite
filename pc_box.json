@@ -7,5 +7,89 @@
     ],
     "altura": 6,
     "peso": 85
+  },
+  {
+    "id": 25,
+    "nome": "pikachu",
+    "tipos": [
+      "electric"
+    ],
+    "altura": 4,
+    "peso": 60
+  },
+  {
+    "id": 19,
+    "nome": "rattata",
+    "tipos": [
+      "normal"
+    ],
+    "altura": 3,
+    "peso": 35
+  },
+  {
+    "id": 59,
+    "nome": "arcanine",
+    "tipos": [
+      "fire"
+    ],
+    "altura": 19,
+    "peso": 1550
+  },
+  {
+    "id": 619,
+    "nome": "mienfoo",
+    "tipos": [
+      "fighting"
+    ],
+    "altura": 9,
+    "peso": 200
+  },
+  {
+    "id": 651,
+    "nome": "quilladin",
+    "tipos": [
+      "grass"
+    ],
+    "altura": 7,
+    "peso": 290
+  },
+  {
+    "id": 185,
+    "nome": "sudowoodo",
+    "tipos": [
+      "rock"
+    ],
+    "altura": 12,
+    "peso": 380
+  },
+  {
+    "id": 1,
+    "nome": "bulbasaur",
+    "tipos": [
+      "grass",
+      "poison"
+    ],
+    "altura": 7,
+    "peso": 69
+  },
+  {
+    "id": 6,
+    "nome": "charizard",
+    "tipos": [
+      "fire",
+      "flying"
+    ],
+    "altura": 17,
+    "peso": 905
+  },
+  {
+    "id": 3,
+    "nome": "venusaur",
+    "tipos": [
+      "grass",
+      "poison"
+    ],
+    "altura": 20,
+    "peso": 1000
   }
 ]
