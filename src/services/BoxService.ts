@@ -36,18 +36,25 @@ export class CatalogoPokemon {
 
   listar(): void {
     if (this.pokemons.length === 0) {
-      console.log("[AVISO] Catálogo vazio.");
+      console.log("[⚠️] Catálogo vazio.");
       return;
     }
 
     this.pokemons.sort((a, b) => a.id - b.id);
 
-    console.log("Catálogo atual (Ordenado por ID):");
-    this.pokemons.forEach((pokemon) => {
+    console.log("\n" + "=".repeat(85));
+    console.log(
+      `|🆔 ID | 🏷️ Nome      | 🧬 Tipos              | ❤️ HP | ⚔️ ATK|📏Alt |⚖️ Peso |`
+    );
+    console.log("-".repeat(85));
+
+    this.pokemons.forEach((p) => {
+
       console.log(
-        `#${pokemon.id} ${pokemon.nome} | Tipos: ${pokemon.tipos.join(", ")} | HP: ${pokemon.hp} | ATK: ${pokemon.ataque} | Altura: ${pokemon.altura} | Peso: ${pokemon.peso}`
+        `| #${p.id.toString().padEnd(3)} | ${p.nome.padEnd(12)} | ${p.tipos.join(", ").padEnd(20)} | ${p.hp.toString().padEnd(4)} | ${p.ataque.toString().padEnd(4)} | ${p.altura.toString().padEnd(4)} | ${p.peso.toString().padEnd(6)} |`
       );
     });
+    console.log("=".repeat(85) + "\n");
   }
 
   async remover(id: number): Promise<void> {

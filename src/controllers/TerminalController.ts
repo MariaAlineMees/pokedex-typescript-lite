@@ -18,10 +18,10 @@ export class TerminalController {
             console.log("\n=========================================");
             console.log("             MENU POKÉDEX                ");
             console.log("=========================================");
-            console.log("[1] Buscar e Adicionar Pokémon");
-            console.log("[2] Listar Catálogo");
-            console.log("[3] Remover Pokémon do Catálogo");
-            console.log("[0] Sair do Programa");
+            console.log("[1] 🔍 Buscar e Adicionar Pokémon");
+            console.log("[2] 📋 Listar Catálogo");
+            console.log("[3] 🗑️  Remover Pokémon do Catálogo");
+            console.log("[0] 🚪 Sair do Programa");
             console.log("=========================================");
 
 
