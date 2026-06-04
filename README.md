@@ -68,6 +68,8 @@ O projeto foi organizado em camadas arquiteturais para isolar responsabilidades.
     │   ├── services/
     │   │   ├── BoxService.ts           # Lida com a lógica de salvar, listar e remover localmente
     │   │   └── PokeApiService.ts       # Lida exclusivamente com as requisições HTTP (fetch)
+    │   ├── utils/
+    │   │   └── textFormatters.ts       # Funções puras para formatação de texto (Clean Code)
     │   └── main.ts                     # Ponto de entrada que inicializa a aplicação
     ├── pc_box.json                     # Banco de dados local (gerado automaticamente)
     ├── package.json                    # Gerenciador de dependências e scripts
@@ -112,8 +114,8 @@ Arquivo pc_box.json gerado automaticamente pelo sistema, armazenando os dados fo
 * **TypeScript e Interfaces:** A tipagem forte foi garantida através do uso de Interfaces (PokemonResumo e PokemonApiResponse) para mapear os objetos esperados da API e atuar como molde seguro da entidade principal.
 * **Fetch e async/await:** A integração foi implementada na classe PokeApiService. A função de busca utiliza fetch nativo e async/await para realizar requisições HTTP e aguardar a resposta de forma assíncrona.
 * **Tratamento de erros:** A aplicação é protegida por try/catch. Verificações interceptam retornos 404 da PokeAPI, garantindo que o programa apenas exiba avisos no terminal.
-* **Métodos de Array Integrados:** 
-  * map() para extrair tipos;
+* **Arquitetura e Clean Code:** Criação de diretório `utils` contendo funções puras (`textFormatters.ts`) para separar as responsabilidades de formatação visual da lógica de negócios, aplicando o princípio DRY (Don't Repeat Yourself).
+* **Métodos de Array Integrados:** * map() para extrair tipos;
   * some() para impedir IDs duplicados;
   * forEach() para iterar e exibir o catálogo;
   * filter() para reconstruir arrays nas remoções;
@@ -128,7 +130,8 @@ Arquivo pc_box.json gerado automaticamente pelo sistema, armazenando os dados fo
 - **Branches utilizadas no GitFlow:**
   - main (Produção)
   - develop (Desenvolvimento contínuo)
-  - feat/pokedex (Implementação de funcionalidades)
+  - feat/pokedex (Implementação principal)
+  - feat/utils-formatters (Refatoração de código)
 
 ---
 
