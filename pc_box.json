@@ -147,14 +147,14 @@
     "ataque": 95
   },
   {
-    "id": 19,
-    "nome": "rattata",
+    "id": 151,
+    "nome": "mew",
     "tipos": [
-      "normal"
+      "psychic"
     ],
-    "altura": 3,
-    "peso": 35,
-    "hp": 30,
-    "ataque": 56
+    "altura": 4,
+    "peso": 40,
+    "hp": 100,
+    "ataque": 100
   }
 ]

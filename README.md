@@ -59,17 +59,19 @@ O projeto foi organizado em camadas arquiteturais para isolar responsabilidades.
     ├── assets/
     │   ├── menu-interativo.png         # Captura de tela do menu
     │   ├── print-tabela.png            # Captura de tela da tabela de listagem
-    │   └── print-json.png              # Captura de tela do banco de dados
+    │   ├── print-json.png              # Captura de tela do banco de dados
+    │   ├── teste-busca.png             # Evidência de busca válida
+    │   └── testes-terminais.png        # Evidência de erro, duplicidade e remoção
     ├── src/
     │   ├── controllers/
     │   │   └── TerminalController.ts   # Gerencia a interface e os menus do terminal
     │   ├── models/
     │   │   └── Pokemon.ts              # Define as Interfaces (tipagens) dos dados
     │   ├── services/
-    │   │   ├── BoxService.ts           # Lida com a lógica de salvar, listar e remover localmente
-    │   │   └── PokeApiService.ts       # Lida exclusivamente com as requisições HTTP (fetch)
+    │   │   ├── BoxService.ts           # Lida com a lógica de salvar, listar e remover
+    │   │   └── PokeApiService.ts       # Lida exclusivamente com requisições HTTP (fetch)
     │   ├── utils/
-    │   │   └── textFormatters.ts       # Funções puras para formatação de texto (Clean Code)
+    │   │   └── textFormatters.ts       # Funções puras para formatação de texto
     │   └── main.ts                     # Ponto de entrada que inicializa a aplicação
     ├── pc_box.json                     # Banco de dados local (gerado automaticamente)
     ├── package.json                    # Gerenciador de dependências e scripts
@@ -90,21 +92,45 @@ O projeto foi organizado em camadas arquiteturais para isolar responsabilidades.
 
 ---
 
-## 📸 Exemplos de execução
+## 📸 Exemplos de execução e Testes Mínimos
 
-### 1. Menu Interativo Principal
-Abaixo, a interface de controle do sistema aguardando a entrada do usuário:
+O sistema foi submetido aos testes exigidos nos requisitos funcionais, validando a integridade do banco de dados local e o consumo correto da PokeAPI.
 
+### 1. Busca válida
+* **Entrada testada:** `mew`
+* **Saída esperada:** `[OK] mew adicionado ao catálogo.`
+
+![Teste Busca Válida](./assets/teste-busca.png)
+
+---
+
+### 2. Busca inválida
+* **Entrada testada:** `pokemon`
+* **Saída esperada:** `[ERRO] Pokémon não encontrado: pokemon`
+
+### 3. Duplicidade
+* **Entrada testada:** adicionar `pikachu` duas vezes
+* **Saída esperada:** `[AVISO] pikachu já está no catálogo.`
+
+### 4. Remoção
+* **Entrada testada:** remover ID `19`
+* **Saída esperada:** `[OK] Pokémon removido do catálogo.`
+
+**Comprovação Visual dos Testes de Validação (Inválido, Duplicidade e Remoção):**
+
+![Testes de Validação](./assets/testes-terminais.png)
+
+---
+
+### Evidências Visuais Gerais
+
+**A. Menu Interativo Principal e Listagem (Tabela)**
+Abaixo, a interface de controle do sistema e a demonstração da persistência de dados local com listagem ordenada:
 ![Print do Menu Interativo](./assets/menu-interativo.png)
-
-### 2. Listagem do Catálogo (Tabela)
-Demonstração da listagem formatada e ordenada por ID, exibindo os dados persistidos:
-
 ![Print da Tabela de Catálogo](./assets/print-tabela.png)
 
-### 3. Persistência de Dados (JSON)
-Arquivo pc_box.json gerado automaticamente pelo sistema, armazenando os dados formatados do catálogo localmente:
-
+**B. Persistência de Dados (JSON)**
+Arquivo `pc_box.json` gerado automaticamente pelo sistema:
 ![Print do Banco de Dados Local](./assets/print-json.png)
 
 ---
@@ -115,7 +141,8 @@ Arquivo pc_box.json gerado automaticamente pelo sistema, armazenando os dados fo
 * **Fetch e async/await:** A integração foi implementada na classe PokeApiService. A função de busca utiliza fetch nativo e async/await para realizar requisições HTTP e aguardar a resposta de forma assíncrona.
 * **Tratamento de erros:** A aplicação é protegida por try/catch. Verificações interceptam retornos 404 da PokeAPI, garantindo que o programa apenas exiba avisos no terminal.
 * **Arquitetura e Clean Code:** Criação de diretório `utils` contendo funções puras (`textFormatters.ts`) para separar as responsabilidades de formatação visual da lógica de negócios, aplicando o princípio DRY (Don't Repeat Yourself).
-* **Métodos de Array Integrados:** * map() para extrair tipos;
+* **Métodos de Array Integrados:** 
+  * map() para extrair tipos;
   * some() para impedir IDs duplicados;
   * forEach() para iterar e exibir o catálogo;
   * filter() para reconstruir arrays nas remoções;
