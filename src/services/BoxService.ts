@@ -1,3 +1,4 @@
+import { capitalizarNome, formatarTipos, formatarPeso } from '../utils/textFormatters.js';
 import type { PokemonResumo } from "../models/Pokemon.js";
 import { readFile, writeFile } from "fs/promises";
 import { join } from "path";
@@ -49,9 +50,13 @@ export class CatalogoPokemon {
     console.log("-".repeat(85));
 
     this.pokemons.forEach((p) => {
+      // Aqui nós usamos as funções importadas da pasta utils!
+      const nomeFormatado = capitalizarNome(p.nome);
+      const tiposFormatados = formatarTipos(p.tipos);
+      const pesoFormatado = formatarPeso(p.peso);
 
       console.log(
-        `| #${p.id.toString().padEnd(3)} | ${p.nome.padEnd(12)} | ${p.tipos.join(", ").padEnd(20)} | ${p.hp.toString().padEnd(4)} | ${p.ataque.toString().padEnd(4)} | ${p.altura.toString().padEnd(4)} | ${p.peso.toString().padEnd(6)} |`
+        `| #${p.id.toString().padEnd(3)} | ${nomeFormatado.padEnd(12)} | ${tiposFormatados.padEnd(20)} | ${p.hp.toString().padEnd(4)} | ${p.ataque.toString().padEnd(4)} | ${p.altura.toString().padEnd(4)} | ${pesoFormatado.padEnd(7)} |`
       );
     });
     console.log("=".repeat(85) + "\n");
